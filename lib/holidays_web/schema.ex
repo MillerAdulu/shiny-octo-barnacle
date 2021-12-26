@@ -24,5 +24,4 @@ defmodule Holidays.Schema do
   def middleware(middleware, _field, _object) do
     middleware
   end
-
 end

@@ -3,7 +3,6 @@ defmodule Holidays.GraphQL.Schema.DayTypes do
 
   alias Holidays.GraphQL.Resolvers
 
-
   ## Data Types
   object :day do
     field :uuid, :string

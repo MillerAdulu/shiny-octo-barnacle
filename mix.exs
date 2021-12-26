@@ -51,7 +51,7 @@ defmodule Holidays.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:cors_plug, "~> 2.0"},
       {:absinthe, "~> 1.6"},
-      {:absinthe_plug, "~> 1.5"},
+      {:absinthe_plug, "~> 1.5"}
     ]
   end
 
