@@ -14,10 +14,15 @@ defmodule HolidaysWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", HolidaysWeb do
-    pipe_through :browser
+  pipeline :graphql do
+    plug Holidays.Context
+  end
 
-    get "/", PageController, :index
+  scope "/" do
+    pipe_through :graphql
+
+    forward "/graphql", Absinthe.Plug, schema: Holidays.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Holidays.Schema
   end
 
   # Other scopes may use custom stacks.
