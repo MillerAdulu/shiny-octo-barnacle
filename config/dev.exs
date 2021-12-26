@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :holidays_api, HolidaysApi.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "adulu",
+  password: "",
   database: "holidays_api_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
