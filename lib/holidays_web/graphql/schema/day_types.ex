@@ -21,4 +21,11 @@ defmodule Holidays.GraphQL.Schema.DayTypes do
       resolve(&Resolvers.Days.create_day/3)
     end
   end
+
+  object :list_days do
+    @desc "Create a new holiday"
+    field :list_days, list_of(:day) do
+      resolve(&Resolvers.Days.list_days/3)
+    end
+  end
 end

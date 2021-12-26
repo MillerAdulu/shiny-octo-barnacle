@@ -10,7 +10,7 @@ defmodule Holidays.Schema do
   import_types(Schema.DayTypes)
 
   query do
-
+    import_fields(:list_days)
   end
 
   mutation do
