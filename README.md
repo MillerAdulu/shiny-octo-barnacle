@@ -1,4 +1,4 @@
-# HolidaysApi
+# Holidays
 
 To start your Phoenix server:
 

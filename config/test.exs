@@ -5,23 +5,23 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :holidays_api, HolidaysApi.Repo,
+config :holidays, Holidays.Repo,
   username: "postgres",
   password: "postgres",
-  database: "holidays_api_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "holidays_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :holidays_api, HolidaysApiWeb.Endpoint,
+config :holidays, HolidaysWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "+LZYY/5poqmx3dw4tdSrHmP6+SYjpVWYKU8YHnpPPsXnEzm/gOzBBGlua7F3E82R",
+  secret_key_base: "cMBM2jvC9N7e+3ITECh3q9jllnS2ZL7TeMtWhriPZbq6wrx0zI+DaS9n63eM6kya",
   server: false
 
 # In test we don't send emails.
-config :holidays_api, HolidaysApi.Mailer, adapter: Swoosh.Adapters.Test
+config :holidays, Holidays.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn

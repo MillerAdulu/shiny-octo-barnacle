@@ -1,13 +1,13 @@
-defmodule HolidaysApiWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :holidays_api
+defmodule HolidaysWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :holidays
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_holidays_api_key",
-    signing_salt: "8xMf0DU+"
+    key: "_holidays_key",
+    signing_salt: "2NExn9hL"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -18,7 +18,7 @@ defmodule HolidaysApiWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :holidays_api,
+    from: :holidays,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule HolidaysApiWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :holidays_api
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :holidays
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -46,5 +46,5 @@ defmodule HolidaysApiWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug HolidaysApiWeb.Router
+  plug HolidaysWeb.Router
 end

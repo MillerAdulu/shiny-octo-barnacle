@@ -1,4 +1,4 @@
-defmodule HolidaysApiWeb.ErrorHelpers do
+defmodule HolidaysWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule HolidaysApiWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(HolidaysApiWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(HolidaysWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(HolidaysApiWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(HolidaysWeb.Gettext, "errors", msg, opts)
     end
   end
 end

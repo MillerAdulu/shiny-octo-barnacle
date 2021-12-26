@@ -1,5 +1,5 @@
-defmodule HolidaysApiWeb.LayoutView do
-  use HolidaysApiWeb, :view
+defmodule HolidaysWeb.LayoutView do
+  use HolidaysWeb, :view
 
   # Phoenix LiveDashboard is available only in development by default,
   # so we instruct Elixir to not warn if the dashboard route is missing.

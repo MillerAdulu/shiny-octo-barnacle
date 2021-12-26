@@ -1,6 +1,6 @@
-defmodule HolidaysApi do
+defmodule Holidays do
   @moduledoc """
-  HolidaysApi keeps the contexts that define your domain
+  Holidays keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

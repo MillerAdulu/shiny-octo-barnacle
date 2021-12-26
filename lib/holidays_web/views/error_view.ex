@@ -1,5 +1,5 @@
-defmodule HolidaysApiWeb.ErrorView do
-  use HolidaysApiWeb, :view
+defmodule HolidaysWeb.ErrorView do
+  use HolidaysWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

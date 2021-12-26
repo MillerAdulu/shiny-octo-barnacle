@@ -1,4 +1,4 @@
-defmodule HolidaysApi.Application do
+defmodule Holidays.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule HolidaysApi.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      HolidaysApi.Repo,
+      Holidays.Repo,
       # Start the Telemetry supervisor
-      HolidaysApiWeb.Telemetry,
+      HolidaysWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: HolidaysApi.PubSub},
+      {Phoenix.PubSub, name: Holidays.PubSub},
       # Start the Endpoint (http/https)
-      HolidaysApiWeb.Endpoint
-      # Start a worker by calling: HolidaysApi.Worker.start_link(arg)
-      # {HolidaysApi.Worker, arg}
+      HolidaysWeb.Endpoint
+      # Start a worker by calling: Holidays.Worker.start_link(arg)
+      # {Holidays.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: HolidaysApi.Supervisor]
+    opts = [strategy: :one_for_one, name: Holidays.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule HolidaysApi.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    HolidaysApiWeb.Endpoint.config_change(changed, removed)
+    HolidaysWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

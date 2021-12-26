@@ -7,15 +7,15 @@
 # General application configuration
 import Config
 
-config :holidays_api,
-  ecto_repos: [HolidaysApi.Repo]
+config :holidays,
+  ecto_repos: [Holidays.Repo]
 
 # Configures the endpoint
-config :holidays_api, HolidaysApiWeb.Endpoint,
+config :holidays, HolidaysWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: HolidaysApiWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: HolidaysApi.PubSub,
-  live_view: [signing_salt: "RJ0G0oEt"]
+  render_errors: [view: HolidaysWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Holidays.PubSub,
+  live_view: [signing_salt: "mJSN3pBp"]
 
 # Configures the mailer
 #
@@ -24,7 +24,7 @@ config :holidays_api, HolidaysApiWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :holidays_api, HolidaysApi.Mailer, adapter: Swoosh.Adapters.Local
+config :holidays, Holidays.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

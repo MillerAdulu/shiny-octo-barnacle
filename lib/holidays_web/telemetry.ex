@@ -1,4 +1,4 @@
-defmodule HolidaysApiWeb.Telemetry do
+defmodule HolidaysWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,23 +31,23 @@ defmodule HolidaysApiWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("holidays_api.repo.query.total_time",
+      summary("holidays.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("holidays_api.repo.query.decode_time",
+      summary("holidays.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("holidays_api.repo.query.query_time",
+      summary("holidays.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("holidays_api.repo.query.queue_time",
+      summary("holidays.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("holidays_api.repo.query.idle_time",
+      summary("holidays.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -65,7 +65,7 @@ defmodule HolidaysApiWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {HolidaysApiWeb, :count_users, []}
+      # {HolidaysWeb, :count_users, []}
     ]
   end
 end

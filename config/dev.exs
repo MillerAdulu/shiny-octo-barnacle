@@ -1,10 +1,10 @@
 import Config
 
 # Configure your database
-config :holidays_api, HolidaysApi.Repo,
+config :holidays, Holidays.Repo,
   username: "adulu",
   password: "",
-  database: "holidays_api_dev",
+  database: "holidays_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,14 +15,14 @@ config :holidays_api, HolidaysApi.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :holidays_api, HolidaysApiWeb.Endpoint,
+config :holidays, HolidaysWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "bVkqUHuL9ltTLdTK6NV7SqCV3NFLWUOuNK/rwMsilqS4xXsNvHGP7mJlamjauITE",
+  secret_key_base: "vZ5tUplgGX1epa5P65IUWodNoI1VykxRRpMOLAfLz18ytXGJnNBkTFU4ljQF50gk",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
@@ -53,13 +53,13 @@ config :holidays_api, HolidaysApiWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :holidays_api, HolidaysApiWeb.Endpoint,
+config :holidays, HolidaysWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/holidays_api_web/(live|views)/.*(ex)$",
-      ~r"lib/holidays_api_web/templates/.*(eex)$"
+      ~r"lib/holidays_web/(live|views)/.*(ex)$",
+      ~r"lib/holidays_web/templates/.*(eex)$"
     ]
   ]
 
